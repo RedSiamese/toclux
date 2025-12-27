@@ -46,7 +46,7 @@ async function initDetail() {
   }
 
   try {
-    const response = await fetch(`${product.id}/doc.md`);
+    const response = await fetch(`${product.folder}/doc.md`);
     if (!response.ok) throw new Error("Doc not found");
     const text = await response.text();
     const doc = parseDoc(text);
@@ -59,7 +59,7 @@ async function initDetail() {
 }
 
 function renderPage(product, doc) {
-  const imageRoot = `${product.id}/`;
+  const imageRoot = `${product.folder}/`;
 
   // 1. 生成所有图片网格
   const imagesHtml = product.images.map((img) => `

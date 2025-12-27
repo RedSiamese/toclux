@@ -1,7 +1,30 @@
+const categories = [
+  {
+    id: "straight-connectors",
+    folder: "Straight-Connectors",
+    name: "Straight Connectors",
+    images: ["71WEhG868BL._AC_SL1500_.jpg"]
+  },
+  {
+    id: "corner-brackets",
+    folder: "Corner-Brackets",
+    name: "Corner Brackets",
+    images: ["61ByGpqrX2L._AC_SL1500_.jpg", "615UC-Sa6JL._AC_SL1500_.jpg", "61wUV86UsOL._AC_SL1500_.jpg"]
+  },
+  {
+    id: "interior-hidden",
+    folder: "Interior-Hidden-Corner-Connectors",
+    name: "Interior / Hidden Corner Connectors",
+    images: ["71Lm-+tQeZL._AC_SL1500_.jpg"]
+  }
+];
+
 const products = [
   {
     id: "1",
-    category: "Series 2020",
+    folder: "Straight-Connectors/1",
+    categoryId: "straight-connectors",
+    category: "Straight Connectors",
     images: [
       "61kIQ+7vZiL._AC_SL1500_.jpg",
       "61kzgjkj+jL._AC_SL1500_.jpg",
@@ -12,7 +35,9 @@ const products = [
   },
   {
     id: "2",
-    category: "Series 2020 / 2040",
+    folder: "Corner-Brackets/2",
+    categoryId: "corner-brackets",
+    category: "Corner Brackets",
     images: [
       "614sjNzNzYL.jpg",
       "61cACMsyMyL.jpg",
@@ -27,7 +52,9 @@ const products = [
   },
   {
     id: "3",
-    category: "Series 2020 / 2040",
+    folder: "Corner-Brackets/3",
+    categoryId: "corner-brackets",
+    category: "Corner Brackets",
     images: [
       "51A1ORgLnpL._AC_SL1500_.jpg",
       "61ByGpqrX2L._AC_SL1500_.jpg",
@@ -41,7 +68,9 @@ const products = [
   },
   {
     id: "4",
-    category: "Series 2020",
+    folder: "Interior-Hidden-Corner-Connectors/4",
+    categoryId: "interior-hidden",
+    category: "Interior / Hidden Corner Connectors",
     images: [
       "61S-GrsIlNL._AC_SL1500_.jpg",
       "61zjsfWyVwL._AC_SL1500_.jpg",
@@ -53,7 +82,9 @@ const products = [
   },
   {
     id: "5",
-    category: "Series 2020 / 2040",
+    folder: "Corner-Brackets/5",
+    categoryId: "corner-brackets",
+    category: "Corner Brackets",
     images: [
       "61cACMsyMyL._AC_SL1500_.jpg",
       "61l-pap77NL._AC_SL1500_.jpg",
@@ -65,7 +96,9 @@ const products = [
   },
   {
     id: "6",
-    category: "Series 2020",
+    folder: "Interior-Hidden-Corner-Connectors/6",
+    categoryId: "interior-hidden",
+    category: "Interior / Hidden Corner Connectors",
     images: [
       "6156M5Bvt2L._AC_SL1500_.jpg",
       "71-WTqQdkcL._AC_SL1500_.jpg",
@@ -77,7 +110,9 @@ const products = [
   },
   {
     id: "7",
-    category: "Series 2020 / 2040",
+    folder: "Corner-Brackets/7",
+    categoryId: "corner-brackets",
+    category: "Corner Brackets",
     images: [
       "61c9kFA6LkL._AC_SL1500_.jpg",
       "61cACMsyMyL._AC_SL1500_.jpg",
@@ -89,7 +124,9 @@ const products = [
   },
   {
     id: "8",
-    category: "Series 2020 / 2040",
+    folder: "Corner-Brackets/8",
+    categoryId: "corner-brackets",
+    category: "Corner Brackets",
     images: [
       "51DVrKMErNL._AC_SL1500_.jpg",
       "615UC-Sa6JL._AC_SL1500_.jpg",
@@ -103,7 +140,9 @@ const products = [
   },
   {
     id: "9",
-    category: "Series 2020 / 2040",
+    folder: "Corner-Brackets/9",
+    categoryId: "corner-brackets",
+    category: "Corner Brackets",
     images: [
       "61ByGpqrX2L._AC_SL1500_.jpg",
       "61cZvNERkEL._AC_SL1500_.jpg",
@@ -117,7 +156,9 @@ const products = [
   },
   {
     id: "10",
-    category: "Series 2020",
+    folder: "Interior-Hidden-Corner-Connectors/10",
+    categoryId: "interior-hidden",
+    category: "Interior / Hidden Corner Connectors",
     images: [
       "61Z4cH9EMWL._AC_SL1500_.jpg",
       "61zjsfWyVwL._AC_SL1500_.jpg",
@@ -129,7 +170,9 @@ const products = [
   },
   {
     id: "11",
-    category: "Series 2020 / 2040",
+    folder: "Corner-Brackets/11",
+    categoryId: "corner-brackets",
+    category: "Corner Brackets",
     images: [
       "61B1YyctrHL._AC_SL1500_.jpg",
       "61sr8ztv5QL._AC_SL1500_.jpg",
@@ -141,7 +184,9 @@ const products = [
   },
   {
     id: "12",
-    category: "Series 2020 / 2040",
+    folder: "Corner-Brackets/12",
+    categoryId: "corner-brackets",
+    category: "Corner Brackets",
     images: [
       "61ByGpqrX2L._AC_SL1500_.jpg",
       "61cZvNERkEL._AC_SL1500_.jpg",
@@ -155,7 +200,9 @@ const products = [
   },
   {
     id: "13",
-    category: "Series 2020",
+    folder: "Interior-Hidden-Corner-Connectors/13",
+    categoryId: "interior-hidden",
+    category: "Interior / Hidden Corner Connectors",
     images: [
       "6156M5Bvt2L._AC_SL1500_.jpg",
       "716nynPzN1L._AC_SL1500_.jpg",

@@ -1,0 +1,3 @@
+# Straight Connectors
+
+Our Straight Connectors provide a robust solution for extending or joining 2020 and 2040 aluminum extrusion profiles. Crafted from high-strength carbon steel with a corrosion-resistant finish, these joining plates ensure excellent durability and structural integrity. Ideal for extending frames in 3D printers, CNC machines, and industrial workstations, each set includes the necessary hardware for a secure, flush connection.

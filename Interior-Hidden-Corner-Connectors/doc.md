@@ -1,0 +1,3 @@
+# Interior Hidden Corner Connectors
+
+Our Interior Hidden Corner Connectors offer a sleek, low-profile solution for right-angle joints in 20 Series aluminum extrusions. Designed to fit completely inside the 6mm T-slots, these L-shaped brackets provide a clean, aesthetic finish without protruding edges. Made from durable aluminum alloy, they are perfect for building streamlined frames for 3D printers, robotics, and custom displays where visual tidiness is key.

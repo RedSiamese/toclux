@@ -1,0 +1,3 @@
+# Corner Brackets
+
+Our Corner Brackets are designed for secure and durable connections in 20 Series aluminum extrusion profiles. Made from high-strength aluminum alloy with corrosion-resistant finishes, these L-shaped brackets are ideal for reinforcing structural stability in 3D printers, CNC routers, industrial frames, and custom furniture. Kits typically include brackets, M5 sliding T-nuts, and hex screws for a complete installation solution.
