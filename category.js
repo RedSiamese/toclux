@@ -123,8 +123,10 @@ async function init() {
 
   const category = categories.find(c => c.id === catId);
   if (category) {
-      titleEl.innerHTML = `<span>${category.name}</span>`;
-      document.title = `TOCLUX | ${category.name}`;
+      const rawTitle = (category.folder || category.id || "Category");
+      const fallbackTitle = rawTitle.replace(/[-_]+/g, " ");
+      titleEl.innerHTML = `<span>${fallbackTitle}</span>`;
+      document.title = `TOCLUX | ${fallbackTitle}`;
       
       // Fetch and display category description from doc.md
       try {
@@ -132,8 +134,17 @@ async function init() {
         if (res.ok) {
             const text = await res.text();
             const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+            let docTitle = lines[0] || fallbackTitle;
+            if (docTitle.startsWith("#")) {
+                docTitle = docTitle.replace(/^#+\s*/, "");
+            }
+            if (!docTitle) {
+                docTitle = fallbackTitle;
+            }
+            titleEl.innerHTML = `<span>${docTitle}</span>`;
+            document.title = `TOCLUX | ${docTitle}`;
             // Exclude the first line (title) and join the rest
-            const descLines = lines.slice(1); 
+            const descLines = lines.slice(1);
             if (descLines.length > 0) {
                 descEl.innerHTML = descLines.join("<br>");
             }

@@ -3,13 +3,13 @@
 
 const gallery = document.getElementById("work");
 
-function parseDoc(text) {
+function parseDoc(text, fallbackTitle) {
   const lines = text
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean);
 
-  let title = lines[0] || "Unknown Category";
+  let title = lines[0] || fallbackTitle || "Unknown Category";
   if (title.startsWith("#")) {
     title = title.replace(/^#+\s*/, "");
   }
@@ -116,9 +116,16 @@ async function init() {
   try {
     const docs = await Promise.all(
       categories.map(async (c) => {
-        const response = await fetch(`${c.folder}/doc.md`);
-        if (!response.ok) throw new Error(`Doc not found for ${c.id}`);
-        return parseDoc(await response.text());
+        const rawTitle = (c.folder || c.id || "Category");
+        const fallbackTitle = rawTitle.replace(/[-_]+/g, " ");
+        try {
+          const response = await fetch(`${c.folder}/doc.md`);
+          if (!response.ok) throw new Error(`Doc not found for ${c.id}`);
+          return parseDoc(await response.text(), fallbackTitle);
+        } catch (err) {
+          console.error(`Failed to load category doc for ${c.id}`, err);
+          return { title: fallbackTitle, link: "#", description: "" };
+        }
       })
     );
 

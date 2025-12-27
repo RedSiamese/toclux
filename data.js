@@ -2,19 +2,16 @@ const categories = [
   {
     id: "straight-connectors",
     folder: "Straight-Connectors",
-    name: "Straight Connectors",
     images: ["71WEhG868BL._AC_SL1500_.jpg"]
   },
   {
     id: "corner-brackets",
     folder: "Corner-Brackets",
-    name: "Corner Brackets",
     images: ["61ByGpqrX2L._AC_SL1500_.jpg", "615UC-Sa6JL._AC_SL1500_.jpg", "61wUV86UsOL._AC_SL1500_.jpg"]
   },
   {
     id: "interior-hidden",
     folder: "Interior-Hidden-Corner-Connectors",
-    name: "Interior / Hidden Corner Connectors",
     images: ["71Lm-+tQeZL._AC_SL1500_.jpg"]
   }
 ];
