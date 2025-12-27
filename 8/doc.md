@@ -1,0 +1,9 @@
+# 20 Sets Silver 2020 Corner Bracket Pro Kit for 2020 & 2040 Aluminum Extrusion - Brackets Gusset, M5 Sliding T-Nuts & Screws, 1 Ball-End Wrench – for 20 Series 6mm T Slot Extruded Aluminum Accessories
+
+🔩【Durable & Black Anodized Finish】 Our silver 2020 corner brackets are made from high-strength aluminum alloy, providing enhanced corrosion resistance, scratch resistance, and a sleek matte look. The M5 sliding T-nuts are made of carbon steel and hex screws are made of 304 stainless steel, ensuring long-term durability and stability.
+⚙️【Easy & Secure Installation with Ball-End Hex Wrench】 The included ball-end hex wrench allows for angled tightening, making installation easier even in tight or hard-to-reach spaces. These corner brackets fit seamlessly into 20 Series aluminum profiles with 6mm T-slots, ensuring a clean and secure connection without protruding edges.
+🛠️【Complete Set for Industrial Applications】 This kit includes 20pcs silver 20mm × 28mm corner brackets with gusset, 40pcs M5 sliding T-nuts, 40pcs M5 hex socket cap screws, 40pcs washers and 1pc ball-end hex wrench, providing all necessary components to securely join 2020 & 2040 aluminum extrusion profiles. Ideal for reinforcing structural stability in various industrial and DIY applications.
+🏗️【Wide Range of Applications】 Perfect for industrial aluminum frame structures, 3D printers, CNC routers, laser engravers, robotic projects, workstations, and custom furniture. Fully compatible with 20 Series aluminum extrusion profiles, making it an excellent choice for professional and DIY builders alike.
+🌱【Eco-Friendly Packaging】 We care about sustainability—this product comes in eco-conscious, recyclable packaging to help reduce plastic waste and minimize environmental impact.
+
+https://www.amazon.com/Black-Corner-Bracket-Aluminum-Extrusion/dp/B0F19BJMJQ?ref_=ast_sto_dp&th=1
