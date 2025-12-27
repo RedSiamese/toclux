@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@300;400;500&display=swap');
+
+:root {
+  --bg: #fdfbf9; /* 暖米白，更有纸张质感 */
+  --text: #1a1a1a;
+  --text-grey: #888;
+  --line: #e5e5e5;
+  --font-display: 'Italiana', serif; /* 优雅的衬线体标题 */
+  --font-body: 'Manrope', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+/* Nav */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  mix-blend-mode: difference; /* 让导航在深色图片上也能看清 */
+  color: #fff;
+}
+
+.brand {
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.menu {
+  display: flex;
+  gap: 40px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  position: relative;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(60px, 10vw, 160px);
+  font-weight: 400;
+  line-height: 0.9;
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+}
+
+.headline .indent {
+  margin-left: 20vw;
+  color: var(--text-grey);
+}
+
+.sub-headline {
+  margin-top: 60px;
+  margin-left: auto;
+  max-width: 400px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-grey);
+  position: relative;
+}
+
+.scroll-hint {
+  display: block;
+  margin-top: 80px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.scroll-hint::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 60px;
+  background: var(--text-grey);
+  margin-top: 20px;
+}
+
+/* Gallery / Products */
+.gallery {
+  padding: 100px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  gap: 8%;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.project:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.project-media {
+  flex: 1.2;
+  position: relative;
+  background: #f0f0f0;
+  /* aspect-ratio 保持不变，或者根据需要调整 */
+  aspect-ratio: 4/3; 
+  overflow: hidden; /* 隐藏溢出，依靠内部 track 滚动 */
+}
+
+/* 滚动容器 */
+.slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox 隐藏滚动条 */
+  scroll-behavior: smooth;
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari 隐藏滚动条 */
+}
+
+/* 单张图片容器 */
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff; /* 保持每张图背景一致 */
+}
+
+.slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  transition: transform 0.6s ease;
+}
+
+/* 导航点容器 */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+}
+
+/* 导航点 */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* 增加鼠标感应范围 */
+.dot::after {
+  content: "";
+  position: absolute;
+  top: -10px; bottom: -10px;
+  left: -5px; right: -5px;
+}
+
+.dot:hover, .dot.active {
+  background: #1a1a1a;
+  transform: scale(1.2);
+}
+
+.project-media:hover .slide img {
+  /* 只有当没有特定交互时才放大，或者保持微弱放大 */
+  transform: scale(1.02);
+}
+
+.project-info {
+  flex: 1;
+}
+
+.project-meta {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-grey);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 400;
+  margin-bottom: 30px;
+  line-height: 1.1;
+}
+
+.project-desc {
+  font-size: 16px;
+  color: var(--text-grey);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 400px;
+}
+
+.btn-link {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 5px;
+  position: relative;
+  overflow: hidden;
+  color: var(--text);
+}
+
+.btn-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--text);
+  transform: translateX(-101%);
+  transition: transform 0.3s ease;
+}
+
+.btn-link:hover::after {
+  transform: translateX(0);
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 100px 60px;
+  margin-top: 100px;
+}
+
+.footer h2 {
+  font-family: var(--font-display);
+  font-size: 80px;
+  margin-bottom: 60px;
+}
+
+.links {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.copyright {
+  color: #555;
+  font-size: 12px;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .nav { padding: 30px; }
+  .hero { padding: 0 30px; height: auto; min-height: 80vh; padding-top: 150px; }
+  .headline { font-size: 60px; }
+  .headline .indent { margin-left: 0; }
+  
+  .gallery { padding: 60px 30px; gap: 80px; }
+  .project, .project:nth-child(even) {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .project-media { width: 100%; aspect-ratio: 1/1; }
+  .project-title { font-size: 32px; }
+  
+  .footer { padding: 60px 30px; }
+  .footer h2 { font-size: 40px; }
+  
+  .detail-header { grid-template-columns: 1fr; }
+  .detail-gallery { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   Detail Page Styles
+   ========================================= */
+
+.detail-nav {
+  background: var(--bg); /* 详情页导航不透明，防止文字重叠 */
+  mix-blend-mode: normal;
+  color: var(--text);
+  border-bottom: 1px solid var(--line);
+}
+
+.back-link {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.detail-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 60px 60px;
+}
+
+/* Header Section: Title & Text */
+.detail-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 100px;
+  align-items: start;
+}
+
+.detail-meta {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--text-grey);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.detail-title {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.btn-purchase {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 16px 32px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-purchase:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+.header-desc {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.header-desc p {
+  margin-bottom: 16px;
+}
+
+.spec-highlight {
+  font-weight: 500;
+  color: #000;
+  margin-top: 24px;
+  font-size: 16px;
+  border-left: 2px solid #000;
+  padding-left: 15px;
+}
+
+/* Gallery Grid */
+.detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 两列布局 */
+  gap: 40px;
+}
+
+.gallery-item {
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 让第一张图占满宽度，作为主图 */
+.gallery-item:first-child {
+  grid-column: 1 / -1;
+  background: #f4f4f4;
+  padding: 60px;
+}
