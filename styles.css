@@ -64,6 +64,10 @@ a:hover {
   color: #ff9933;
 }
 
+.brand-detail-accent {
+  color: #0066cc;
+}
+
 .menu {
   display: flex;
   gap: 40px;
