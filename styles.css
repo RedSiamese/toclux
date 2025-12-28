@@ -60,6 +60,10 @@ a:hover {
   font-size: 14px;
 }
 
+.brand-accent {
+  color: #ff9933;
+}
+
 .menu {
   display: flex;
   gap: 40px;
@@ -70,11 +74,15 @@ a:hover {
 
 /* Hero */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 60px;
+  padding: 140px 60px 100px;
   position: relative;
+}
+
+.hero-inner {
+  width: 90%;
 }
 
 .headline {
@@ -93,9 +101,9 @@ a:hover {
 }
 
 .sub-headline {
-  margin-top: 60px;
+  margin-top: 120px;
   margin-left: auto;
-  max-width: 400px;
+  max-width: 800px;
   font-size: 18px;
   line-height: 1.6;
   color: var(--text-grey);
@@ -448,6 +456,12 @@ a:hover {
   .hero { padding: 0 30px; height: auto; min-height: 80vh; padding-top: 150px; }
   .headline { font-size: 60px; }
   .headline .indent { margin-left: 0; }
+  
+  .sub-headline {
+    margin-top: 40px;
+    margin-left: 0;
+    max-width: 100%;
+  }
   
   .gallery { padding: 60px 30px; gap: 80px; }
   .project, .project:nth-child(even) {
